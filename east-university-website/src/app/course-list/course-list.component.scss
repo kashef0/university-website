@@ -1,0 +1,259 @@
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.om-uppgiften {
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .search-select {
+        padding-top: 2em;
+        width: 100%;
+        display: flex;
+        justify-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    h1 {
+        padding: 1em 1em 0 1em;
+    }
+
+    .search-holder {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .select-option {
+        width: 55%;
+        padding: 1em;
+    }
+    option {
+        font-size: 1.4em;
+    }
+    select {
+        border: 2px solid black;
+        border-radius: 5px;
+        box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    
+
+    .search-label {
+        
+        font-size: calc((1em + 1vw) / 1.1);
+    }
+
+    #search {
+        padding: 10px;
+        width: 50%;
+        height: 3.6em;
+        border-radius: 5px;
+        box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.8);
+        font-size: 1em;
+    }
+
+    input:focus, select:focus {
+        outline: none !important;
+        border:1px solid red;
+        box-shadow: 0 0 10px #719ECE;
+    }
+
+    .om-uppgiften h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 2em;
+        padding: 1em;
+    }
+
+    .om-kurser {
+        overflow-x: auto;
+        padding: 3em;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 2px solid rgb(140 140 140);
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: calc((1em + 1vw) / 2);
+        letter-spacing: 1px;
+        margin-top: 2em;
+
+    }
+
+    thead,
+    tfoot {
+        background-color: rgb(228 240 245);
+    }
+
+    th,
+    td {
+        border: 1px solid rgb(160 160 160);
+        padding: 13px 10px;
+    }
+
+    td:last-of-type {
+        text-align: center;
+    }
+
+    tbody>tr:nth-of-type(even) {
+        background-color: rgb(237 238 242);
+    }
+
+    tfoot th {
+        text-align: right;
+        
+    }
+    .code, .courseName, 
+    .progressionTH, .syllabus {
+        text-decoration: underline;
+        color: rgb(169, 31, 7);
+    }
+
+    .courseName {
+        text-align: left;
+    }
+    
+    .progression {
+        text-align: center;
+    }
+
+    .points {
+        text-align: center;
+    }
+    tfoot td {
+        font-weight: bold;
+    }
+
+    #code,
+    #progression,
+    #name {
+        cursor: pointer;
+    }
+
+    .code:hover,
+    .courseName:hover,
+    .progressionTH:hover,
+    .syllabus:hover {
+        cursor: pointer;
+        color: green;
+    }
+    button {
+        padding: .25em 1.5em;
+        white-space: nowrap;
+        border: outset;
+        box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    button:hover {
+        background-color: #138510;
+        cursor: pointer;
+        border: inset;
+        color: whitesmoke;
+        box-shadow: none;
+    }
+
+    .error-message {
+        padding-top: 1em;
+        font-size: 1.4em;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .fake_button:hover {
+        background-color: #138510;
+        cursor: pointer;
+        color: white;
+        font-family:"Roboto", sans-serif;
+    }
+    .number {
+        color: rgb(169, 31, 7);
+        font-weight: bold;
+    }
+}
+
+
+footer {
+    background-color: #2b2e35;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+
+    .footer-head,
+    .footer-para {
+        font-size: .75em;
+        color: ghostwhite;
+        text-align: center;
+        padding-bottom: .50em;
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+    .om-kurser {
+        width: 80%;
+    }
+
+    #kursData {
+        overflow-x: auto !important;
+    }
+
+    .search-select {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .search-label {
+        display: none;
+    }
+
+    .search-holder {
+        width: 100%;
+        padding-bottom: 1em;
+    }
+
+    #search {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .om-kurser {
+        width: 100%;
+        font-size: .75em;
+    }
+
+    .kursList {
+        padding: .50em;
+    }
+
+    .search-label {
+        display: none;
+    }
+
+    #search {
+        width: 90% !important;
+    }
+    
+    .search-holder {
+        width: 100% !important;
+        margin-bottom: 1em;
+    }
+    .select-option {
+        width: 90% !important;
+        margin-left: 1.5em;
+        padding: 1em;
+    }
+
+    
+}

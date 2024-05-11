@@ -1,0 +1,93 @@
+.om-kurser {
+    overflow-x: auto;
+    padding: 3em;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc((1em + 1vw) / 2);
+    letter-spacing: 1px;
+    margin-top: 2em;
+
+}
+
+thead,
+tfoot {
+    background-color: rgb(228 240 245);
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 13px 10px;
+}
+
+td:last-of-type {
+    text-align: center;
+}
+
+tbody>tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+}
+
+tfoot th {
+    text-align: right;
+    
+}
+.code, .courseName, 
+.progressionTH, .syllabus {
+    color: rgb(169, 31, 7);
+}
+
+.courseName {
+    text-align: left;
+}
+
+.progression {
+    text-align: center;
+}
+
+.points {
+    text-align: center;
+}
+tfoot td {
+    font-weight: bold;
+}
+
+#code,
+#progression,
+#name {
+    cursor: pointer;
+}
+
+// .code:hover,
+// .courseName:hover,
+// .progressionTH:hover,
+// .syllabus:hover {
+//     cursor: pointer;
+//     color: green;
+// }
+button {
+    padding: .25em 1.5em;
+    white-space: nowrap;
+    border: outset;
+    box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.8);
+}
+
+button:hover {
+    background-color: rgb(169, 31, 7);
+    cursor: pointer;
+    border: inset;
+    color: whitesmoke;
+    box-shadow: none;
+}
+
+.error-message {
+    padding-top: 1em;
+    font-size: 1.4em;
+    font-family: "Roboto", sans-serif;
+}

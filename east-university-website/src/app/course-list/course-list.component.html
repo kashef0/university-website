@@ -1,49 +1,64 @@
-<p>course-list works!</p>
 <body>
-    <ul>
-        <li>
-            <a routerLink="/ram-schema.component.html">ram-schem</a>
-        </li>
-    </ul>
     <main>
         <section class="om-uppgiften">
-            <button (click)="showTotal()"> Total of all products</button> {{numberOfCourses}}
-            <h1>webbutveckling - Ramschema</h1>
-            <form class="search-holder">
-                <label for="search" class="search-label">Sök här:</label>
-                <input type="search" id="search" name="search" placeholder="Sök här" [(ngModel)]="search" (input)="onSearch()">
-            </form>
+            <h1>Kurser</h1>
+            <div class="search-select">
+                <form class="search-holder">
+                    <label for="search" class="search-label">Filtrera kurser:</label>
+                    <input type="search" id="search" name="search" placeholder="Filtrera kurser" [(ngModel)]="search" (input)="onSearch()">
+                </form>
+                
+                <select class="select-option" [(ngModel)]="selectedSubject" (change)="onChange(selectedSubject)">
+                    <option value="">--Välj ett ämne--</option>
+                    <option value="All">Alla ämnen</option>
+                    <option *ngFor="let subject of altSub" [value]="subject">{{ subject }}</option>
+                </select>
+            </div>
             
-            <select [(ngModel)]="selectedSubject" (change)="onChange(selectedSubject)">
-                <option value="All">Alla ämnen</option>
-                <option *ngFor="let subject of altSub" [value]="subject">{{ subject }}</option>
-            </select>
             <div class="om-kurser">
-                <table id="kursData">
-                    <tbody>
-                        <tr class="thead">
-                            <th class="code" (click)="sortBy('code')">Kurskod</th>
-                            <th class="Kursnamn courseName" (click)="sortBy('coursename')">Kursnamn</th>
-                            <th class="progressionTH" (click)="sortBy('progression')">Ämne</th>
-                            <th class="kursNamn syllabus" (click)="sortBy('syllabus')">Kursplan</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr class="kursList" *ngFor="let course of filteringCourses">
-                            <td class="kurskod">{{ course.courseCode}}</td>
-                            <td class="kursNamn">{{ course.courseName }}</td>
-                            <td class="progression">{{ course.subject }}</td>
-                            <td class="kursNamn url"><a href="{{ course.syllabus }}">{{ course.courseName.slice(0, 4) }}</a></td>
-                           
+                <table>
+                    <tbody class="total-courses">
+                        <tr>
+                            <td class="fake_button">
+                                Antal kurser
+                            </td>
+                            <td [class.number]="numberOfCourses !== 0">
+                                {{ numberOfCourses }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div id="error">
-
+                <p-table [value]="filteringCourses" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5,10,20]">
+                    <ng-template pTemplate="header">
+                        <tr class="thead">
+                            <th class="code" (click)="sortBy('code')">Kurskod</th>
+                            <th class="Kursnamn courseName" (click)="sortBy('coursename')">Kursnamn</th>
+                            <th class="Kursnamn courseName" (click)="sortBy('points')">Poäng</th>
+                            <th class="progressionTH" (click)="sortBy('subject')">Ämne</th>
+                            <th class="kursNamn syllabus" (click)="sortBy('syllabus')">Kursplan</th>
+                            <th>Lägg till</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-course>
+                    
+                    
+                        <tr class="kursList">
+                            <td class="kurskod">{{ course.courseCode}}</td>
+                            <td class="kursNamn">{{ course.courseName }}</td>
+                            <td class="kursNamn points">{{ course.points }}</td>
+                            <td class="progression">{{ course.subject }}</td>
+                            <td class="kursNamn url"><a href="{{ course.syllabus }}">Kursplan</a></td>
+                            <td>
+                                <button (click)="addToSchema(course)">Lägg till</button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                @if(filteringCourses.length == 0){
+                    <p class="error-message">Inga kurser hittades....</p>
+                }
             </div>
         </section>
-        
     </main>
     <footer>
         <h3 class="footer-head">Laborationsuppgift Angular II för kursen DT208G ,Programmering i TypeScript</h3>
