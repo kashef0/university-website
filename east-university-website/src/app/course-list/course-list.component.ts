@@ -1,21 +1,25 @@
-import { Component, model } from '@angular/core';
+import { Component } from '@angular/core';
 import { CourseService } from '../services/course.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Course } from '../model/course';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
+import { ViewEncapsulation } from '@angular/core';
+
 
 @Component({
   selector: 'app-course-list',
   standalone: true,
   imports: [CommonModule, FormsModule, TableModule,
-    PaginatorModule],
+    PaginatorModule ],
   templateUrl: './course-list.component.html',
-  styleUrl: './course-list.component.scss'
+  styleUrl: './course-list.component.scss',
+  encapsulation : ViewEncapsulation.None
 })
 
 export class CourseListComponent {
+  optionValue: string = "all"
   row: string = "";
   courses_list: Course[] = [];
   filteringCourses: Course[] = [];
@@ -84,7 +88,7 @@ export class CourseListComponent {
 
   // filttrera kurser baserat på kursnamn och kurskod
   onSubmit() {
-    // this.filteringCourses = [...this.courses_list];
+    this.filteringCourses = [...this.courses_list];
       console.log(this.search);
       this.filteringCourses = this.courses_list.filter(course =>
         course.courseCode.toLowerCase().includes(this.search.toLowerCase()) ||
@@ -126,6 +130,6 @@ export class CourseListComponent {
   showTotal() {
       this.numberOfCourses = this.filteringCourses.length; // visa antal kurser 
   }
-}
 
+}
 

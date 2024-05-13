@@ -1,8 +1,18 @@
+body {
+    background-image: url("/assets/images/background01.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    
+}
+
 main {
     width: 100%;
     display: flex;
     justify-content: center;
+    backdrop-filter: blur(5px);
+    padding: 2em 0;
 }
+
 .om-uppgiften {
     max-width: 960px;
     width: 100%;
@@ -10,7 +20,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    background-color: rgba(255, 255, 255, 0.806);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+
     .search-select {
         padding-top: 2em;
         width: 100%;
@@ -22,6 +35,10 @@ main {
 
     h1 {
         padding: 1em 1em 0 1em;
+        font-size: 2em;
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        text-align: center;
     }
 
     .search-holder {
@@ -87,19 +104,24 @@ main {
         font-style: normal;
         font-size: calc((1em + 1vw) / 2);
         letter-spacing: 1px;
-        margin-top: 2em;
+        // margin-top: 2em;
 
     }
 
     thead,
     tfoot {
         background-color: rgb(228 240 245);
+        
     }
-
+    th.code, .courseName,
+    .syllabus, .progressionTH {
+        font-weight: 700;
+    }
     th,
     td {
         border: 1px solid rgb(160 160 160);
         padding: 13px 10px;
+        font-weight: 300;
     }
 
     td:last-of-type {
@@ -109,7 +131,7 @@ main {
     tbody>tr:nth-of-type(even) {
         background-color: rgb(237 238 242);
     }
-
+    
     tfoot th {
         text-align: right;
         
@@ -148,19 +170,23 @@ main {
         cursor: pointer;
         color: green;
     }
-    button {
+    .addBtn {
         padding: .25em 1.5em;
         white-space: nowrap;
         border: outset;
         box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.8);
     }
 
-    button:hover {
-        background-color: #138510;
+    .addBtn:hover {
+        background-color: #0e5199;
         cursor: pointer;
         border: inset;
         color: whitesmoke;
         box-shadow: none;
+    }
+
+    .url a:hover {
+        color: green;
     }
 
     .error-message {
@@ -169,39 +195,53 @@ main {
         font-family: "Roboto", sans-serif;
     }
 
-    .fake_button:hover {
-        background-color: #138510;
-        cursor: pointer;
-        color: white;
-        font-family:"Roboto", sans-serif;
-    }
+    // .fake_button:hover {
+    //     background-color: #138510;
+    //     cursor: pointer;
+    //     color: white;
+    //     font-family:"Roboto", sans-serif;
+    // }
     .number {
         color: rgb(169, 31, 7);
         font-weight: bold;
     }
-}
 
-
-footer {
-    background-color: #2b2e35;
-    width: 100%;
-    height: auto;
-    padding: 20px;
-
-    .footer-head,
-    .footer-para {
-        font-size: .75em;
-        color: ghostwhite;
-        text-align: center;
-        padding-bottom: .50em;
+    .p-paginator-bottom.p-paginator.p-component {
+        padding-top: 20px;
     }
-
-}
+    
+        button.p-ripple.p-element.p-paginator-next.p-paginator-element.p-link,
+        button.p-ripple.p-element.p-paginator-last.p-paginator-element.p-link,
+        button.p-ripple.p-element.p-paginator-prev.p-paginator-element.p-link,
+        button.p-ripple.p-element.p-paginator-first.p-paginator-element.p-link {
+            padding: 10px;
+            height: 3em;
+            margin: .1em;
+            border-radius: 50%;
+            border: 1px solid black;
+            transition: transform 0.3s;
+            background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+            ;
+        }
+    
+        button.p-ripple.p-element.p-paginator-next.p-paginator-element.p-link:hover,
+        button.p-ripple.p-element.p-paginator-last.p-paginator-element.p-link:hover,
+        button.p-ripple.p-element.p-paginator-prev.p-paginator-element.p-link:hover,
+        button.p-ripple.p-element.p-paginator-first.p-paginator-element.p-link:hover {
+            transform: scale(1.1);
+            background-color: #0e5199;
+            color: white;
+        }
+    
+        span.p-paginator-current {
+            font-size: 1.1em;
+        }
+        }
 
 
 @media screen and (max-width: 700px) {
     .om-kurser {
-        width: 80%;
+        width: 100%;
     }
 
     #kursData {
@@ -231,6 +271,7 @@ footer {
     .om-kurser {
         width: 100%;
         font-size: .75em;
+        padding: .5em !important;
     }
 
     .kursList {

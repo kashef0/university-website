@@ -1,12 +1,15 @@
 #darkBtnContainer {
     width: 100%;
-    padding-top: 4em;
+    padding: 3em 0 1em 0;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    background-color: #2b2e35;
+    
 
     h2 {
         padding-right: .25em;
+        color: white;
     }
     .darkmodBTN {
         width: 10%;

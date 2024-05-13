@@ -1,67 +1,63 @@
-<body>
-    <main>
-        <section class="om-uppgiften">
-            <h1>Kurser</h1>
-            <div class="search-select">
-                <form class="search-holder">
-                    <label for="search" class="search-label">Filtrera kurser:</label>
-                    <input type="search" id="search" name="search" placeholder="Filtrera kurser" [(ngModel)]="search" (input)="onSearch()">
-                </form>
-                
-                <select class="select-option" [(ngModel)]="selectedSubject" (change)="onChange(selectedSubject)">
-                    <option value="">--Välj ett ämne--</option>
-                    <option value="All">Alla ämnen</option>
-                    <option *ngFor="let subject of altSub" [value]="subject">{{ subject }}</option>
-                </select>
-            </div>
+<main class="course_list_darkMod">
+    <section class="om-uppgiften">
+        <h1>Kurser</h1>
+        <div class="search-select">
+            <form class="search-holder">
+                <label for="search" class="search-label">Filtrera kurser:</label>
+                <input type="search" id="search" name="search" placeholder="Filtrera kurser" [(ngModel)]="search"
+                    (input)="onSearch()">
+            </form>
             
-            <div class="om-kurser">
-                <table>
-                    <tbody class="total-courses">
-                        <tr>
-                            <td class="fake_button">
-                                Antal kurser
-                            </td>
-                            <td [class.number]="numberOfCourses !== 0">
-                                {{ numberOfCourses }}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p-table [value]="filteringCourses" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5,10,20]">
-                    <ng-template pTemplate="header">
-                        <tr class="thead">
-                            <th class="code" (click)="sortBy('code')">Kurskod</th>
-                            <th class="Kursnamn courseName" (click)="sortBy('coursename')">Kursnamn</th>
-                            <th class="Kursnamn courseName" (click)="sortBy('points')">Poäng</th>
-                            <th class="progressionTH" (click)="sortBy('subject')">Ämne</th>
-                            <th class="kursNamn syllabus" (click)="sortBy('syllabus')">Kursplan</th>
-                            <th>Lägg till</th>
-                        </tr>
+            <select class="select-option" name="subject" [(ngModel)]="selectedSubject" (change)="onChange(selectedSubject)">
+                <option [value]="optionValue" selected disabled hidden>--Välj ett ämne--</option>
+                <option value="All">Alla ämnen</option>
+                <option *ngFor="let subject of altSub" [value]="subject">{{ subject }}</option>
+            </select>
+        </div>
+
+        <div class="om-kurser">
+            <table>
+                <tbody class="total-courses">
+                    <tr>
+                        <td class="fake_button">
+                            Antal kurser
+                        </td>
+                        <td [class.number]="numberOfCourses !== 0">
+                            {{ numberOfCourses }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card">
+                <p-table [value]="filteringCourses" [rows]="10" [paginator]="true" 
+                    [showPageLinks]="false" [showCurrentPageReport]="true" [showJumpToPageDropdown]="false">
+                    <ng-template pTemplate="header" styleClass="override-this">
+                            <tr class="thead">
+                                <th class="code" (click)="sortBy('code')">Kurskod</th>
+                                <th class="Kursnamn courseName" (click)="sortBy('coursename')">Kursnamn</th>
+                                <th class="Kursnamn courseName" (click)="sortBy('points')">Poäng</th>
+                                <th class="progressionTH" (click)="sortBy('subject')">Ämne</th>
+                                <th class="kursNamn syllabus" (click)="sortBy('syllabus')">Kursplan</th>
+                                <th class="code">Lägg till</th>
+                            </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-course>
-                    
-                    
-                        <tr class="kursList">
-                            <td class="kurskod">{{ course.courseCode}}</td>
-                            <td class="kursNamn">{{ course.courseName }}</td>
-                            <td class="kursNamn points">{{ course.points }}</td>
-                            <td class="progression">{{ course.subject }}</td>
-                            <td class="kursNamn url"><a href="{{ course.syllabus }}">Kursplan</a></td>
-                            <td>
-                                <button (click)="addToSchema(course)">Lägg till</button>
-                            </td>
-                        </tr>
+                            <tr class="kursList">
+                                <td class="kurskod">{{ course.courseCode}}</td>
+                                <td class="kursNamn">{{ course.courseName }}</td>
+                                <td class="kursNamn points">{{ course.points }}</td>
+                                <td class="progression">{{ course.subject }}</td>
+                                <td class="kursNamn url"><a href="{{ course.syllabus }}">Kursplan</a></td>
+                                <td>
+                                    <button (click)="addToSchema(course)" class="addBtn">Lägg till</button>
+                                </td>
+                            </tr>
                     </ng-template>
                 </p-table>
-                @if(filteringCourses.length == 0){
-                    <p class="error-message">Inga kurser hittades....</p>
-                }
             </div>
-        </section>
-    </main>
-    <footer>
-        <h3 class="footer-head">Laborationsuppgift Angular II för kursen DT208G ,Programmering i TypeScript</h3>
-        <p class="footer-para">© Copyright Mohamed Abokashef, 2024</p>
-    </footer>
-</body>
+            @if(filteringCourses.length == 0){
+            <p class="error-message">Inga kurser hittades....</p>
+            }
+        </div>
+    </section>
+</main>
