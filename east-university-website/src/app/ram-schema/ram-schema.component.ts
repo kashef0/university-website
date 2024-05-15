@@ -12,6 +12,7 @@ import { RamSchemaService } from '../services/ram-schema.service';
 })
 export class RamSchemaComponent implements OnInit {
   pointCounter!: number;
+  numberOfCourses: number = 0;
   
   constructor(private ramSchemaService: RamSchemaService, private reloadContent: ChangeDetectorRef) {}
 
@@ -30,9 +31,15 @@ export class RamSchemaComponent implements OnInit {
     const addCourse = localStorage.getItem("RamSchema");
     if (addCourse !== null) {
       this.RamSchema = JSON.parse(addCourse);
+      if (this.RamSchema !== undefined) {
+        this.numberOfCourses = this.RamSchema?.length;
+      } else {
+        this.numberOfCourses = 0;
+      }
     } else {
       this.RamSchema = [];
     }
+    
   }
 
 
@@ -46,6 +53,7 @@ export class RamSchemaComponent implements OnInit {
         courseLocalStorage.splice(index, 1);
         localStorage.setItem('RamSchema', JSON.stringify(courseLocalStorage));
       }
+      this.numberOfCourses = this.numberOfCourses - 1;
       this.reloadContent.detectChanges();
     }
     }
