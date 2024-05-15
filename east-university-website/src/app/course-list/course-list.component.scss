@@ -5,6 +5,7 @@ body {
     
 }
 
+
 main {
     width: 100%;
     display: flex;
@@ -21,9 +22,10 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.806);
-    backdrop-filter: blur(5px);
     border-radius: 4px;
-
+    backdrop-filter: blur(5px);
+    
+    
     .search-select {
         padding-top: 2em;
         width: 100%;
@@ -100,8 +102,6 @@ main {
         font-style: normal;
         font-size: calc((1em + 1vw) / 2);
         letter-spacing: 1px;
-        // margin-top: 2em;
-
     }
 
     thead,
@@ -190,13 +190,6 @@ main {
         font-size: 1.4em;
         font-family: "Roboto", sans-serif;
     }
-
-    // .fake_button:hover {
-    //     background-color: #138510;
-    //     cursor: pointer;
-    //     color: white;
-    //     font-family:"Roboto", sans-serif;
-    // }
     .number {
         color: rgb(169, 31, 7);
         font-weight: bold;
@@ -232,7 +225,7 @@ main {
         span.p-paginator-current {
             font-size: 1.1em;
         }
-        }
+}
 
 
 @media screen and (max-width: 700px) {
@@ -291,6 +284,4 @@ main {
         margin-left: 1.5em;
         padding: 1em;
     }
-
-    
 }
