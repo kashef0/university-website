@@ -1,38 +1,40 @@
 <main>
     <div class="om-kurser" id="ram-schema-course">
-        <h1>Mitt Ramschema</h1>
-        <table class="kursData">
-        <thead>
-            <tr class="thead">
-                <th class="code">Kurskod</th>
-                <th class="Kursnamn courseName">Kursnamn</th>
-                <th class="Kursnamn courseName">Poäng</th>
-                <th class="progressionTH">Ämne</th>
-                <th class="kursNamn syllabus">Kursplan</th>
-                <th class="remove">ta bort</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="kursList" *ngFor="let course of RamSchema; let i = index">
-                <td class="kurskod">{{ course.courseCode }}</td>
-                <td class="kursNamn">{{ course.courseName }}</td>
-                <td class="kursNamn points">{{ course.points }}</td>
-                <td class="progression">{{ course.subject }}</td>
-                <td class="kursNamn url"><a href="{{ course.syllabus }}">Kursplan</a></td>
-                <td>
-                    <button (click)="removeCourse(i)">ta bort</button>
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th scope="row" colspan="2" class="code">Total poäng</th>
-                <td>{{ pointCounter }}</td>
-            </tr>
-        </tfoot>
-        </table>
-        @if(RamSchema?.length == 0){
-            <p class="error-message">Ingen kurs har lagts till....</p>
-        }
+        <section style="overflow-x: auto">
+            <h1>Mitt Ramschema</h1>
+            <table class="kursData">
+            <thead>
+                <tr class="thead">
+                    <th class="code">Kurskod</th>
+                    <th class="Kursnamn courseName">Kursnamn</th>
+                    <th class="Kursnamn courseName">Poäng</th>
+                    <th class="progressionTH">Ämne</th>
+                    <th class="kursNamn syllabus">Kursplan</th>
+                    <th class="remove">ta bort</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="kursList" *ngFor="let course of RamSchema; let i = index">
+                    <td class="kurskod">{{ course.courseCode }}</td>
+                    <td class="kursNamn">{{ course.courseName }}</td>
+                    <td class="kursNamn points">{{ course.points }}</td>
+                    <td class="progression">{{ course.subject }}</td>
+                    <td class="kursNamn url"><a href="{{ course.syllabus }}">Kursplan</a></td>
+                    <td>
+                        <button (click)="removeCourse(i)">ta bort</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row" colspan="2" class="code">Total poäng</th>
+                    <td>{{ pointCounter }}</td>
+                </tr>
+            </tfoot>
+            </table>
+            @if(RamSchema?.length == 0){
+                <p class="error-message">Ingen kurs har lagts till....</p>
+            }
+        </section>
         </div>
 </main>

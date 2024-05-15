@@ -54,11 +54,11 @@ $dark-text: #ffffff;
 }
 
 .dark-theme {
-    background-color: #121212;
+    background-color: #212121;
     color: #ffffff;
 
     td {
-        background-color: #121212;
+        background-color: #212121;
         color: #ffffff;
     }
     .url a {
@@ -68,8 +68,8 @@ $dark-text: #ffffff;
         color: green;
     }
     .code, .courseName, 
-    .progressionTH, .syllabus, .remove {
-        background-color: #121212;
+    .progressionTH, .syllabus, .remove, .added {
+        background-color: #212121;
         color: white;
     }
 
@@ -78,7 +78,7 @@ $dark-text: #ffffff;
     }
 
     .om-uppgiften{
-        background-color: #121212;
+        background-color: #212121;
     }
 
     #ram-schema-course, .course_list_darkMod {
