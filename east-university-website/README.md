@@ -1,4 +1,4 @@
-# East University webbplats
+# East University Webbplats
 
 Kurslistan-appen är en onlinewebbapplikation som tillåter användare att visa, sortera, filtrera och organisera en lista över kurser. Användarna har också möjlighet att lägga till kurser i sitt RAM-schema och spara det lokalt i webbläsaren eller ta bort kurser från RAM-schemat. Dessutom visas poängantalet för varje kurs.
 
