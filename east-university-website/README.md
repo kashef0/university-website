@@ -17,7 +17,7 @@ Kurslistan-appen är en onlinewebbapplikation som tillåter användare att visa,
 
 ## Användning
 
-1. **Öppna applikationen**: Öppna webbläsaren och gå till [länken till applikationen](https://main--cool-lollipop-ab3a59.netlify.app/course-list).
+1. **Öppna applikationen**: Öppna webbläsaren och gå till [länken till applikationen](https://statuesque-palmier-889062.netlify.app/home).
 2. **Visa kurser**: På startsidan visas en lista över tillgängliga kurser.
 3. **Sortera kurser**: Använd rullgardinsmenyn för att välja hur du vill sortera kurserna och klicka på "Sortera".
 4. **Filtrera kurser**: Välj ett ämne från rullgardinsmenyn och klicka på "Filtrera" för att visa endast kurser i det valda ämnet.
