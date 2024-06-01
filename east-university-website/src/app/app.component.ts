@@ -5,15 +5,15 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 import { RamSchemaComponent } from './ram-schema/ram-schema.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from "./home/home.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CourseListComponent, NavmenuComponent, ThemeToggleComponent, RamSchemaComponent
-  ,FooterComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, CourseListComponent, NavmenuComponent, ThemeToggleComponent, RamSchemaComponent,
+        FooterComponent, HomeComponent]
 })
 
 

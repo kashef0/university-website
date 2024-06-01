@@ -4,6 +4,8 @@ Kurslistan-appen är en onlinewebbapplikation som tillåter användare att visa,
 
 ## Funktioner
 
+- **Start sida**: det finns information om universitet med möjlighet att navigera mellan sidor.
+
 - **Visa kurser**: Användare har möjlighet att se en lista över tillgängliga kurser.
 - **Sortera kurser**: Användare kan sortera kurser efter kurskod, kursnamn, poäng eller ämne.
 - **Filtrera kurser**: Användare kan filtrera kurser baserat på ämne.

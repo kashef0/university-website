@@ -84,6 +84,28 @@ $dark-text: #ffffff;
     #ram-schema-course, .course_list_darkMod {
         background-color: rgba(32, 31, 31, 0.694);
     }
+
+    .main_div .second_section, section.students {
+        background-color: #2b2e35;
+        color: white;
+    }
+    .second_section[_ngcontent-ng-c3354186365] p[_ngcontent-ng-c3354186365] {
+        color: white;
+    }
+
+    section#main_div, .footer {
+        background-color: #2b2e358b;
+        color: white;
+    }
+
+    .main_div .footer {
+        background-color: #2b2e35;
+    }
+
+    .main_div .students .div-underSection .heading3 p {
+        color: white;
+    }
+
 }
 
 
